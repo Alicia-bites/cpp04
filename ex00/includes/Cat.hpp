@@ -12,7 +12,8 @@ class Cat : public Animal
 		Cat(Cat const& ori);
 		~Cat();
 		std::string	getType() const;
-		void		displayAttributes() const;
+		void		displayAttributes(std::ostream& o) const;
+		Cat&		operator=(Cat const& rhs);
 };
 
 std::ostream&	operator<<(std::ostream o, Animal const& rhs);

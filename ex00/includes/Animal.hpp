@@ -10,7 +10,7 @@ class Animal
 		std::string	type_;
 	public :
 		Animal();
-		Animal(std::string& type);
+		Animal(std::string type);
 		Animal(Animal const& ori);
 		~Animal();
 		
@@ -19,7 +19,7 @@ class Animal
 		void		makeSound() const;
 		std::string getType() const;
 
-		void		displayAttributes() const;
+		void		displayAttributes(std::ostream& o) const;
 };
 
 std::ostream&	operator<<(std::ostream o, Animal const& rhs);

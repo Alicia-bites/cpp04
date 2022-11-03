@@ -1,6 +1,6 @@
 # project settings
-NAME 			:=	Diamond
-NAME_AR			:=	Diamond.a
+NAME 			:=	Animal
+NAME_AR			:=	Animal.a
 C++				:=	c++
 CXXFLAGS		:=	-MMD -Wall -Wextra -Werror -std=c++98
 # CXXFLAGSADD		:=	-g3
@@ -18,6 +18,8 @@ SRCS			:=	main.cpp \
 					Animal.cpp \
 					Dog.cpp \
 					Cat.cpp \
+					WrongAnimal.cpp \
+					WrongCat.cpp \
 
 OBJS			:=	$(addprefix $(OPATH)/, $(SRCS:.cpp=.o))
 DEPS			:=	$(OBJS:.o=.d)

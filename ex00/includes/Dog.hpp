@@ -11,9 +11,10 @@ class Dog : public Animal
 		Dog();
 		Dog(Dog const& ori);
 		~Dog();
+		Dog&	operator=(Dog const& rhs);
 
 		std::string	getType() const;
-		void		displayAttributes() const;
+		void		displayAttributes(std::ostream& o) const;
 };
 
 std::ostream&	operator<<(std::ostream o, Animal const& rhs);

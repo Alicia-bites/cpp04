@@ -2,30 +2,31 @@
 
 //default constructor
 Dog::Dog()
-: type_("Dog")
+: Animal("Dog")
+, type_("Dog")
 {
-	std::cout << GREENYELLOW << "calling Dog default constructor" << RESET << std::endl;
+	std::cout << SPRINGGREEN5 << "calling Dog default constructor" << RESET << std::endl;
 }
 
-// constructor
-Dog::Dog(std::string& name)
-: type_("Dog")
-, name_(name)
-{
-	std::cout << GREENYELLOW << "calling Dog constructor" << RESET << std::endl;
-}
+// // constructor
+// Dog::Dog()
+// : type_("Dog")
+// {
+// 	std::cout << SPRINGGREEN5 << "calling Dog constructor" << RESET << std::endl;
+// }
 
 // copy constructor
 Dog::Dog(Dog const& ori)
+: Animal(ori)
 {
-	std::cout << GREENYELLOW << "calling Dog copy constructor" << RESET << std::endl;
+	std::cout << SPRINGGREEN5 << "calling Dog copy constructor" << RESET << std::endl;
 	this->type_ = ori.type_;
 }
 
 // destructor
 Dog::~Dog()
 {
-	std::cout << GREENYELLOW << "calling Dog destructor" << RESET << std::endl;
+	std::cout << SPRINGGREEN5 << "calling Dog destructor" << RESET << std::endl;
 }
 
 // OPERATOR OVERLOADS -----------------------------------------------------------------
@@ -34,10 +35,11 @@ Dog::~Dog()
 Dog&	Dog::operator=(Dog const& rhs)
 {
 	this->type_ = rhs.type_;
+	return *this;
 }
 
 // << overload
-std::ostream&	operator<<(std::ostream o, Cat const& rhs)
+std::ostream&	operator<<(std::ostream& o, Dog const& rhs)
 {
 	rhs.displayAttributes(o);
 	return o;
@@ -48,7 +50,7 @@ std::ostream&	operator<<(std::ostream o, Cat const& rhs)
 void	Dog::displayAttributes(std::ostream& o) const
 {
 	o << "Type = "
-		<< type_;
+		<< type_
 		<< std::endl;
 }
 

@@ -4,26 +4,27 @@
 Animal::Animal()
 : type_("none")
 {
-	std::cout << DEEPPINK1 << "calling Animal default constructor" << RESET << std::endl;
+	std::cout << TURQUOISE2 << "calling Animal default constructor" << RESET << std::endl;
 }
 
 // constructor
-Animal::Animal(std::string& type)
+Animal::Animal(std::string type)
+: type_(type)
 {
-	std::cout << DEEPPINK1 << "calling Animal constructor" << RESET << std::endl;
+	std::cout << TURQUOISE2 << "calling Animal constructor" << RESET << std::endl;
 }
 
 // copy constructor
 Animal::Animal(Animal const& ori)
 {
-	std::cout << DEEPPINK1 << "calling Animal copy constructor" << RESET << std::endl;
+	std::cout << TURQUOISE2 << "calling Animal copy constructor" << RESET << std::endl;
 	this->type_ = ori.type_;
 }
 
 // destructor
 Animal::~Animal()
 {
-	std::cout << DEEPPINK1 << "calling Animal destructor" << RESET << std::endl;
+	std::cout << TURQUOISE2 << "calling Animal destructor" << RESET << std::endl;
 }
 
 // OPERATOR OVERLOADS -----------------------------------------------------------------
@@ -32,10 +33,11 @@ Animal::~Animal()
 Animal&	Animal::operator=(Animal const& rhs)
 {
 	this->type_ = rhs.type_;
+	return *this;
 }
 
 // << overload
-std::ostream&	operator<<(std::ostream o, Cat const& rhs)
+std::ostream&	operator<<(std::ostream& o, Animal const& rhs)
 {
 	rhs.displayAttributes(o);
 	return o;
@@ -45,9 +47,9 @@ std::ostream&	operator<<(std::ostream o, Cat const& rhs)
 
 void	Animal::makeSound() const
 {
-	if (this->getType() == "cat")
+	if (this->getType() == "Cat")
 		std::cout << "meeeeeeeeeeeww..." << std::endl;
-	else if (this->getType() == "dog")
+	else if (this->getType() == "Dog")
 		std::cout << "waf! waf!" << std::endl;
 	else 
 		std::cout << "..." << std::endl;
@@ -56,7 +58,7 @@ void	Animal::makeSound() const
 void	Animal::displayAttributes(std::ostream& o) const
 {
 	o << "Type = "
-		<< type_;
+		<< type_
 		<< std::endl;
 }
 
