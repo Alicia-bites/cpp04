@@ -33,13 +33,13 @@ Cat&	Cat::operator=(Cat const& rhs)
 	return *this;
 }
 
-Animal&	Cat::operator=(Animal const& rhs)
-{
-	std::cout << PURPLE3 << "calling Animal-Cat assignement operator" << RESET << std::endl;
-	this->type_ = rhs.getType();
-	*brain_ = *(rhs.getBrain());
-	return *this;
-}
+// Animal&	Cat::operator=(Animal const& rhs)
+// {
+// 	std::cout << PURPLE3 << "calling Animal-Cat assignement operator" << RESET << std::endl;
+// 	this->type_ = rhs.getType();
+// 	*brain_ = *(rhs.getBrain());
+// 	return *this;
+// }
 
 // MEMBER FUNCTIONS ------------------------------------------------------------------
 
@@ -51,4 +51,26 @@ void	Cat::makeSound() const
 Brain	*Cat::getBrain() const
 {
 	return brain_;
+}
+
+void Cat::testDeepCopyOf(Cat const& other) const
+{
+	std::cout << std::endl;
+	std::cout << "TESTING TWO CAT'S BRAIN" << std::endl;
+	std::cout << "this->brain address is : " << this->brain_ << std::endl;
+	std::cout << "other.brain address is : " << other.brain_ << std::endl;
+	// std::cout << "My brain's heap address: " << static_cast<void*>(this->brain_) << std::endl;
+	// std::cout << "Other's heap address: " << static_cast<void*>(other.getBrain()) << std::endl;
+	std::cout << std::endl;
+	std::cout << "this->brain ~ other->brain" << std::endl;
+	std::cout << "------------------------------" << std::endl;
+	for (int i = 0; i < 100; i++)
+		std::cout << DARKGOLDENROD
+		<< ((this->brain_)->getIdeas())[i]
+		<< RESET << " | "
+		<< DARKCYAN
+		<< ((other.getBrain())->getIdeas())[i]
+		<< RESET
+		<< std::endl;
+	std::cout << std::endl;
 }

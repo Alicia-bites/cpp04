@@ -14,10 +14,13 @@ class Dog : public Animal
 		virtual ~Dog();
 		Dog&	operator=(Dog const& rhs);
 		
-		Animal&	operator=(Animal const& rhs);
+		// Animal&	operator=(Animal const& rhs);
 
 		void	makeSound() const;
 		Brain	*getBrain() const;
+
+		void testDeepCopyOf(Dog const& other) const;
+
 };
 
 #endif

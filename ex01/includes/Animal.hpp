@@ -19,7 +19,6 @@ class Animal
 		virtual void		makeSound() const;
 		std::string 		getType() const;
 		void				displayAttributes(std::ostream& o) const;
-		virtual Brain		*getBrain() const = 0;
 };
 
 std::ostream&	operator<<(std::ostream& o, Animal const& rhs);
