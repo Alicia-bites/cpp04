@@ -6,7 +6,7 @@
 
 class Animal
 {
-	private :
+	protected :
 		std::string	type_;
 	public :
 		Animal();
@@ -20,5 +20,5 @@ class Animal
 		void				displayAttributes(std::ostream& o) const;
 };
 
-std::ostream&	operator<<(std::ostream o, Animal const& rhs);
+std::ostream&	operator<<(std::ostream& o, Animal const& rhs);
 #endif

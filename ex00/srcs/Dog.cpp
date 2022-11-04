@@ -3,24 +3,16 @@
 //default constructor
 Dog::Dog()
 : Animal("Dog")
-, type_("Dog")
 {
 	std::cout << SPRINGGREEN5 << "calling Dog default constructor" << RESET << std::endl;
 }
-
-// // constructor
-// Dog::Dog()
-// : type_("Dog")
-// {
-// 	std::cout << SPRINGGREEN5 << "calling Dog constructor" << RESET << std::endl;
-// }
 
 // copy constructor
 Dog::Dog(Dog const& ori)
 : Animal(ori)
 {
 	std::cout << SPRINGGREEN5 << "calling Dog copy constructor" << RESET << std::endl;
-	this->type_ = ori.type_;
+	*this = ori;
 }
 
 // destructor
@@ -38,29 +30,9 @@ Dog&	Dog::operator=(Dog const& rhs)
 	return *this;
 }
 
-// << overload
-std::ostream&	operator<<(std::ostream& o, Dog const& rhs)
-{
-	rhs.displayAttributes(o);
-	return o;
-}
-
 // MEMBER FUNCTIONS ------------------------------------------------------------------
-
-void	Dog::displayAttributes(std::ostream& o) const
-{
-	o << "Type = "
-		<< type_
-		<< std::endl;
-}
 
 void	Dog::makeSound() const
 {
 	std::cout << "Waf! Waf!" << std::endl;
-}
-
-// - GETTERS
-std::string	Dog::getType() const
-{
-	return type_;
 }

@@ -1,23 +1,23 @@
 #ifndef CAT_HPP
 # define CAT_HPP
 
+#include "Brain.hpp"
 #include "Animal.hpp"
 
 class Cat : public Animal
 {
 	private :
-		std::string type_;
+		Brain	*brain_;
 	public :
 		Cat();
 		Cat(Cat const& ori);
-		~Cat();
+		virtual ~Cat();
+		Cat&	operator=(Cat const& rhs);
 		
-		void		makeSound() const;
-		std::string	getType() const;
-		void		displayAttributes(std::ostream& o) const;
-		Cat&		operator=(Cat const& rhs);
-};
+		Animal&	operator=(Animal const& rhs);
 
-std::ostream&	operator<<(std::ostream o, Animal const& rhs);
+		void	makeSound() const;
+		Brain	*getBrain() const;
+};
 
 #endif

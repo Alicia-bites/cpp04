@@ -3,7 +3,6 @@
 //default constructor
 Cat::Cat()
 : Animal("Cat")
-, type_("Cat")
 {
 	std::cout << PURPLE3 << "calling Cat default constructor" << RESET << std::endl;
 }
@@ -27,6 +26,7 @@ Cat::~Cat()
 // = overload
 Cat&	Cat::operator=(Cat const& rhs)
 {
+	std::cout << PURPLE3 << "calling Cat assignement operator" << RESET << std::endl;
 	this->type_ = rhs.type_;
 	return *this;
 }
@@ -40,20 +40,7 @@ std::ostream&	operator<<(std::ostream& o, Cat const& rhs)
 
 // MEMBER FUNCTIONS ------------------------------------------------------------------
 
-void	Cat::displayAttributes(std::ostream& o) const
-{
-	o << "Type = "
-		<< type_
-		<< std::endl;
-}
-
 void	Cat::makeSound() const
 {
 	std::cout << "Meeeeoww" << std::endl;
-}
-
-// - GETTERS
-std::string	Cat::getType() const
-{
-	return type_;
 }

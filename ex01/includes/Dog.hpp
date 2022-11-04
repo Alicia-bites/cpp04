@@ -1,22 +1,23 @@
 #ifndef DOG_HPP
 # define DOG_HPP
 
+#include "Brain.hpp"
 #include "Animal.hpp"
 
 class Dog : public Animal
 {
 	private :
-		std::string type_;
+		Brain	*brain_;
 	public :
 		Dog();
 		Dog(Dog const& ori);
-		~Dog();
+		virtual ~Dog();
 		Dog&	operator=(Dog const& rhs);
+		
+		Animal&	operator=(Animal const& rhs);
 
-		void		makeSound() const;
-		std::string	getType() const;
-		void		displayAttributes(std::ostream& o) const;
+		void	makeSound() const;
+		Brain	*getBrain() const;
 };
 
-std::ostream&	operator<<(std::ostream o, Animal const& rhs);
 #endif

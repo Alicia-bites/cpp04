@@ -11,14 +11,9 @@ class WrongCat : public WrongAnimal
 		WrongCat();
 		WrongCat(WrongCat const& ori);
 		~WrongCat();
-
-		WrongCat&		operator=(WrongCat const& rhs);
+		WrongCat&	operator=(WrongCat const& rhs);
 		
-		void			displayAttributes(std::ostream& o) const;
 		void			makeSound() const;
-		std::string		getType() const;
 };
-
-std::ostream&	operator<<(std::ostream o, WrongAnimal const& rhs);
 
 #endif

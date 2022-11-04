@@ -3,30 +3,24 @@
 //default constructor
 Dog::Dog()
 : Animal("Dog")
-, type_("Dog")
+, brain_(new Brain())
 {
 	std::cout << SPRINGGREEN5 << "calling Dog default constructor" << RESET << std::endl;
 }
-
-// // constructor
-// Dog::Dog()
-// : type_("Dog")
-// {
-// 	std::cout << SPRINGGREEN5 << "calling Dog constructor" << RESET << std::endl;
-// }
 
 // copy constructor
 Dog::Dog(Dog const& ori)
 : Animal(ori)
 {
 	std::cout << SPRINGGREEN5 << "calling Dog copy constructor" << RESET << std::endl;
-	this->type_ = ori.type_;
+	*this = ori;
 }
 
 // destructor
 Dog::~Dog()
 {
 	std::cout << SPRINGGREEN5 << "calling Dog destructor" << RESET << std::endl;
+	delete brain_;
 }
 
 // OPERATOR OVERLOADS -----------------------------------------------------------------
@@ -34,33 +28,29 @@ Dog::~Dog()
 // = overload
 Dog&	Dog::operator=(Dog const& rhs)
 {
-	this->type_ = rhs.type_;
+	std::cout << SPRINGGREEN5 << "calling Dog assignement operator" << std::endl;
+	type_ = rhs.type_;
+	*brain_ = *(rhs.brain_);
 	return *this;
 }
 
-// << overload
-std::ostream&	operator<<(std::ostream& o, Dog const& rhs)
+Animal&	Dog::operator=(Animal const& rhs)
 {
-	rhs.displayAttributes(o);
-	return o;
+	std::cout << SPRINGGREEN5 << "calling Animal-Dog assignement operator" << std::endl;
+	this->type_ = rhs.getType();
+	*brain_ = *(rhs.getBrain());
+	return *this;
 }
+
 
 // MEMBER FUNCTIONS ------------------------------------------------------------------
-
-void	Dog::displayAttributes(std::ostream& o) const
-{
-	o << "Type = "
-		<< type_
-		<< std::endl;
-}
 
 void	Dog::makeSound() const
 {
 	std::cout << "Waf! Waf!" << std::endl;
 }
 
-// - GETTERS
-std::string	Dog::getType() const
+Brain	*Dog::getBrain() const
 {
-	return type_;
+	return brain_;
 }

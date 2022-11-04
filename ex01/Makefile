@@ -20,6 +20,7 @@ SRCS			:=	main.cpp \
 					Cat.cpp \
 					WrongAnimal.cpp \
 					WrongCat.cpp \
+					Brain.cpp \
 
 OBJS			:=	$(addprefix $(OPATH)/, $(SRCS:.cpp=.o))
 DEPS			:=	$(OBJS:.o=.d)

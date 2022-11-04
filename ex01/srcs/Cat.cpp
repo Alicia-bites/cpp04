@@ -3,7 +3,7 @@
 //default constructor
 Cat::Cat()
 : Animal("Cat")
-, type_("Cat")
+, brain_(new Brain())
 {
 	std::cout << PURPLE3 << "calling Cat default constructor" << RESET << std::endl;
 }
@@ -20,40 +20,35 @@ Cat::Cat(Cat const& ori)
 Cat::~Cat()
 {
 	std::cout << PURPLE3 << "calling Cat destructor" << RESET << std::endl;
+	delete brain_;
 }
 
 // OPERATOR OVERLOADS -----------------------------------------------------------------
 
-// = overload
 Cat&	Cat::operator=(Cat const& rhs)
 {
-	this->type_ = rhs.type_;
+	std::cout << PURPLE3 << "calling Cat assignement operator" << RESET << std::endl;
+	type_ = rhs.type_;
+	*brain_ = *(rhs.brain_);
 	return *this;
 }
 
-// << overload
-std::ostream&	operator<<(std::ostream& o, Cat const& rhs)
+Animal&	Cat::operator=(Animal const& rhs)
 {
-	rhs.displayAttributes(o);
-	return o;
+	std::cout << PURPLE3 << "calling Animal-Cat assignement operator" << RESET << std::endl;
+	this->type_ = rhs.getType();
+	*brain_ = *(rhs.getBrain());
+	return *this;
 }
 
 // MEMBER FUNCTIONS ------------------------------------------------------------------
-
-void	Cat::displayAttributes(std::ostream& o) const
-{
-	o << "Type = "
-		<< type_
-		<< std::endl;
-}
 
 void	Cat::makeSound() const
 {
 	std::cout << "Meeeeoww" << std::endl;
 }
 
-// - GETTERS
-std::string	Cat::getType() const
+Brain	*Cat::getBrain() const
 {
-	return type_;
+	return brain_;
 }

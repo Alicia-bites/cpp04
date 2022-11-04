@@ -38,6 +38,12 @@ int main()
 	meta->makeSound();
 	std::cout << std::endl;
 
+	// Animal a("kangoroo");
+	// Animal b("hippotamus");
+	// a = b;
+	// std::cout << a << std::endl;
+	// std::cout << b << std::endl;
+
 	delete meta;
 	delete dog;
 	delete cat;

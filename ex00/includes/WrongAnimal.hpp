@@ -12,11 +12,11 @@ class WrongAnimal
 		WrongAnimal();
 		WrongAnimal(std::string type);
 		WrongAnimal(WrongAnimal const& ori);
-		virtual ~WrongAnimal();
+		~WrongAnimal();
 		WrongAnimal&		operator=(WrongAnimal const& rhs);
 	
 		void				displayAttributes(std::ostream& o) const;
-		virtual void		makeSound() const;
+		void				makeSound() const;
 		std::string 		getType() const;
 };
 

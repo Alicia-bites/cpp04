@@ -6,7 +6,7 @@
 class Dog : public Animal
 {
 	private :
-		std::string type_;
+
 	public :
 		Dog();
 		Dog(Dog const& ori);
@@ -14,9 +14,6 @@ class Dog : public Animal
 		Dog&	operator=(Dog const& rhs);
 
 		void		makeSound() const;
-		std::string	getType() const;
-		void		displayAttributes(std::ostream& o) const;
 };
 
-std::ostream&	operator<<(std::ostream o, Animal const& rhs);
 #endif

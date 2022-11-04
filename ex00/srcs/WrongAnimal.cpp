@@ -4,27 +4,27 @@
 WrongAnimal::WrongAnimal()
 : type_("none")
 {
-	std::cout << TURQUOISE2 << "calling WrongAnimal default constructor" << RESET << std::endl;
+	std::cout << LIGHTGOLDENROD3 << "calling WrongAnimal default constructor" << RESET << std::endl;
 }
 
 // constructor
 WrongAnimal::WrongAnimal(std::string type)
 : type_(type)
 {
-	std::cout << TURQUOISE2 << "calling WrongAnimal constructor" << RESET << std::endl;
+	std::cout << LIGHTGOLDENROD3 << "calling WrongAnimal constructor" << RESET << std::endl;
 }
 
 // copy constructor
 WrongAnimal::WrongAnimal(WrongAnimal const& ori)
 {
-	std::cout << TURQUOISE2 << "calling WrongAnimal copy constructor" << RESET << std::endl;
+	std::cout << LIGHTGOLDENROD3 << "calling WrongAnimal copy constructor" << RESET << std::endl;
 	this->type_ = ori.type_;
 }
 
 // destructor
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << TURQUOISE2 << "calling WrongAnimal destructor" << RESET << std::endl;
+	std::cout << LIGHTGOLDENROD3 << "calling WrongAnimal destructor" << RESET << std::endl;
 }
 
 // OPERATOR OVERLOADS -----------------------------------------------------------------

@@ -54,6 +54,9 @@ void	Animal::displayAttributes(std::ostream& o) const
 {
 	o << "Type = "
 		<< type_
+		<< std::endl
+		<< "Brain = "
+		<< getBrain()
 		<< std::endl;
 }
 

@@ -2,6 +2,7 @@
 # define BRAIN_HPP
 
 #include <iostream>
+#include "colors.hpp"
 
 class Brain
 {
@@ -13,7 +14,8 @@ class Brain
 		~Brain();
 		Brain&	operator=(Brain const& rhs);
 
-		std::string ideas[100];
+		std::string ideas_[100];
+		
 };
 
 #endif
