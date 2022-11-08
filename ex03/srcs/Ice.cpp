@@ -31,7 +31,7 @@ std::string const & Ice::getType() const
 	return type_;
 }
 
-// return a pointer on a new object of type Ice malloc'd
+// return a pointer on a new object of type Ice assigned on the heap
 Ice *Ice::clone() const
 {
 	Ice	*ret = new Ice;

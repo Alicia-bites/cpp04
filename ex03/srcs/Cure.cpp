@@ -31,7 +31,7 @@ std::string const & Cure::getType() const
 	return type_;
 }
 
-// return a pointer on a new object of type Cure malloc'd
+// return a pointer on a new object of type Cure assigned on the heap
 Cure *Cure::clone() const
 {
 	Cure	*ret = new Cure;
