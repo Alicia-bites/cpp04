@@ -25,6 +25,8 @@ int main()
 	Animal *cat = new Cat();
 	cat->makeSound();
 
+	delete doggy;
+	delete cat;
 	std::cout << std::endl;
 	std::cout << "-----------------------" << std::endl;
 	std::cout << std::endl;
@@ -51,5 +53,6 @@ int main()
 
 	medor.testDeepCopyOf(medorCopy);
 	tom.testDeepCopyOf(tomCopy);
+
 	return 0;
 }

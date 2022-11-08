@@ -30,6 +30,7 @@ Brain::Brain(Brain const& ori)
 Brain::~Brain()
 {
 	std::cout << DEEPPINK3 << "Brain destructor called" << RESET << std::endl;
+	delete [] ideas_;
 }
 
 // copy assigment operator
