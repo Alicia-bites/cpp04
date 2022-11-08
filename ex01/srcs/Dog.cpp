@@ -34,14 +34,6 @@ Dog&	Dog::operator=(Dog const& rhs)
 	return *this;
 }
 
-// Animal&	Dog::operator=(Animal const& rhs)
-// {
-// 	std::cout << SPRINGGREEN5 << "calling Animal-Dog assignement operator" << std::endl;
-// 	this->type_ = rhs.getType();
-// 	*brain_ = *(rhs.getBrain());
-// 	return *this;
-// }
-
 // MEMBER FUNCTIONS ------------------------------------------------------------------
 
 void	Dog::makeSound() const

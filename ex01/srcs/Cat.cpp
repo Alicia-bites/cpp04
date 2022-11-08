@@ -33,14 +33,6 @@ Cat&	Cat::operator=(Cat const& rhs)
 	return *this;
 }
 
-// Animal&	Cat::operator=(Animal const& rhs)
-// {
-// 	std::cout << PURPLE3 << "calling Animal-Cat assignement operator" << RESET << std::endl;
-// 	this->type_ = rhs.getType();
-// 	*brain_ = *(rhs.getBrain());
-// 	return *this;
-// }
-
 // MEMBER FUNCTIONS ------------------------------------------------------------------
 
 void	Cat::makeSound() const
