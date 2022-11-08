@@ -41,7 +41,6 @@ int main()
 	std::cout << "TESTS #3" << std::endl;
 	std::cout << "TEST REQUIRED BY SUBJECT" << std::endl;
 	Animal	*animals[100];
-	// Brain	*brain;
 	std::cout << "Creating 50 Animals of type Cat : " << std::endl;
 	for (int i = 0; i < 50; i++)
 	{
