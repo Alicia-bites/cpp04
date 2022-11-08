@@ -39,7 +39,7 @@ Character & Character::operator=(Character const& rhs)
 	std::cout << SPRINGGREEN5 << "Calling Character assignement operator"
 		<< RESET << std::endl;
 	std::cout << SPRINGGREEN5 << "Assigning " << rhs.name_ 
-		<< " to " << name_; 
+		<< " to " << name_ << std::endl; 
 	for(int i = 0; i < 4; i++)
 	{
 		if (inventory_[i])

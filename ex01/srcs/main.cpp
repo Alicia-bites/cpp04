@@ -64,14 +64,18 @@ int main()
 	Cat tom;
 
 	(sally.getBrain())->setIdeas("bone baby");
+	std::cout << RED << "sally's ideas :"<< RESET << std::endl;
 	(sally.getBrain())->displayIdeas();
 	(tom.getBrain())->setIdeas("I'll get you Jerry!");
+	std::cout << RED << "tom's ideas :" << RESET << std::endl;
 	(tom.getBrain())->displayIdeas();
 
 	Dog sallyCopy;
 	Cat tomCopy;
 
+	std::cout << RED << "sallyCopy's ideas :" << RESET << std::endl;
 	(sallyCopy.getBrain())->displayIdeas();
+	std::cout << RED << "tomCopy's ideas :" << RESET << std::endl;
 	(tomCopy.getBrain())->displayIdeas();
 
 	sallyCopy = sally;

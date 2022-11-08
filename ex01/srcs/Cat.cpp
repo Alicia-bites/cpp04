@@ -51,14 +51,12 @@ void Cat::testDeepCopyOf(Cat const& other) const
 	std::cout << "TESTING TWO CAT'S BRAIN" << std::endl;
 	std::cout << "this->brain address is : " << this->brain_ << std::endl;
 	std::cout << "other.brain address is : " << other.brain_ << std::endl;
-	// std::cout << "My brain's heap address: " << static_cast<void*>(this->brain_) << std::endl;
-	// std::cout << "Other's heap address: " << static_cast<void*>(other.getBrain()) << std::endl;
 	std::cout << std::endl;
 	std::cout << "this->brain ~ other->brain" << std::endl;
 	std::cout << "------------------------------" << std::endl;
 	for (int i = 0; i < 100; i++)
 		std::cout << DARKGOLDENROD
-		<< ((this->brain_)->getIdeas())[i]
+		<< (brain_->getIdeas())[i]
 		<< RESET << " | "
 		<< DARKCYAN
 		<< ((other.getBrain())->getIdeas())[i]

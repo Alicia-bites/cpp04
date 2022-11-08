@@ -8,14 +8,6 @@ WrongCat::WrongCat()
 	std::cout << PURPLE3 << "calling WrongCat default constructor" << RESET << std::endl;
 }
 
-// constructor
-// WrongCat::WrongCat()
-// : WrongAnimal()
-// : type_("WrongCat")
-// {
-	// std::cout << PURPLE3 << "calling WrongCat constructor" << RESET << std::endl;
-// }
-
 // copy constructor
 WrongCat::WrongCat(WrongCat const& ori)
 : WrongAnimal(ori)
